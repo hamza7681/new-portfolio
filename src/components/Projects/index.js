@@ -1,6 +1,7 @@
 import React from "react";
 import Project1 from "./Project1";
 import Footer from "../Footer";
+import Project2 from "./Project2";
 
 const Portfolio = () => {
   return (
@@ -12,6 +13,7 @@ const Portfolio = () => {
       </div>
       <div className="py-[30px]">
         <Project1 />
+        <Project2 />
       </div>
       <Footer />
     </>
