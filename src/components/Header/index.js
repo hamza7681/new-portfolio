@@ -16,7 +16,7 @@ const Header = () => {
           />
         </div>
         <div
-          className="fixed right-[20px] top-[-5px] flex flex-row gap-2 items-center bg-black px-[10px] py-[8px]"
+          className="fixed right-[20px] sm:top-[20px] z-[10] top-[30px] flex flex-row gap-2 items-center bg-black px-[10px] py-[8px]"
           onClick={() => setShow(true)}
         >
           <p className="text-[#275f31] tracking-wider font-bold text-[13px]">
