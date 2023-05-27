@@ -3,7 +3,7 @@ import { FiPhone } from "react-icons/fi";
 import { HiOutlineMail } from "react-icons/hi";
 import { GoLocation } from "react-icons/go";
 import Footer from "../Footer/index";
-import Map from "./Map"
+import Map from "./Map";
 
 const data = [
   {
@@ -19,7 +19,7 @@ const data = [
     icon: FiPhone,
   },
   {
-    id: 1,
+    id: 3,
     title: "Email",
     description: "hamzambf@gmail.com",
     icon: HiOutlineMail,
@@ -29,16 +29,16 @@ const data = [
 const Contact = () => {
   return (
     <>
-      <div className="w-full flex justify-center content-center">
-        <button className="text-white p-6 rounded-sm border-2 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 ... border-white hover:text-black hover:bg-white">
+      <div className="flex justify-center items-center py-[30px]">
+        <h1 className="text-[22px] sm:text-[28px]  text-white uppercase tracking-wider border-b-[1px] border-b-white pb-[4px]">
           Get In Touch
-        </button>
+        </h1>
       </div>
       <div className="flex lg:flex-row flex-col w-auto mx-10 lg:mx-14 mt-10 gap-3 items-center justify-center">
         {data.map((item) => (
           <div
             key={item.id}
-            className="p-8 mb-4 rounded w-full lg:w-1/4 bg-gray-500 h-48 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 ... cursor-pointer"
+            className="p-8 mb-4 w-full lg:w-1/4 contact-card h-48 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 ... cursor-pointer"
           >
             <div className="flex items-center justify-center mb-2">
               {React.createElement(item.icon, {
