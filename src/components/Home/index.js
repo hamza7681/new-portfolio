@@ -1,10 +1,15 @@
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useEffect, useMemo, useRef, useState } from "react";
 import hi from "../../assets/hello.png";
 import { motion } from "framer-motion";
 import { introParagraph } from "../../animations";
-
+import { Link } from "react-router-dom";
+import SocialIcons from "./SocialIcons";
+import { BsChevronDown } from "react-icons/bs";
+import MainSkills from "./Skills";
+import Footer from "../Footer";
 
 const Home = () => {
+  const scrollRef = useRef(null);
   const skills = useMemo(
     () => [
       "JavaScript",
@@ -25,8 +30,10 @@ const Home = () => {
   }, [textIndex, skills]);
   return (
     <>
-      <div className="flex justify-center flex-col items-center sm:px-[70px] px-[30px]  h-screen">
-        <p className="sm:text-[38px] text-[22px] text-white">Here's Hamza Siddique</p>
+      <div className="flex justify-center flex-col items-center sm:px-[70px] px-[30px] ">
+        <p className="sm:text-[38px] text-[22px] text-white">
+          Here's Hamza Siddique
+        </p>
         <p className="text-white sm:text-[40px] text-[23px]">
           A <span className="text-orange-400">{skills[textIndex]} </span>
           Developer
@@ -35,7 +42,7 @@ const Home = () => {
           variants={introParagraph}
           initial="hidden"
           whileInView="show"
-          className="px-[20px] py-[30px] my-[30px] shadow-2xl border-[2px] border-white flex flex-col gap-3"
+          className="sm:pr-[50px] py-[30px] my-[30px] shadow-2xl  flex flex-col gap-3"
         >
           <div className="flex flex-row items-center gap-3">
             <p className="sm:text-[28px] text-[24px] text-white">Hi Guys! </p>
@@ -51,7 +58,37 @@ const Home = () => {
             behavior.
           </p>
         </motion.div>
+        <SocialIcons />
       </div>
+      <div className="flex flex-row items-center gap-4 sm:px-[70px] px-[30px] sm:pb-0 pb-[30px]">
+        <Link
+          to="/portfolio"
+          className="sm:px-[25xpx] sm:py-[10px] px-[18px] py-[8px] border-[2px] text-white transition ease-in-out duration-500 hover:bg-white hover:text-[#275f31] font-semibold"
+        >
+          Portfolio
+        </Link>
+        <Link
+          to="/experience"
+          className="sm:px-[25xpx] sm:py-[10px] px-[18px] py-[8px] border-[2px] text-white transition ease-in-out duration-500 hover:bg-white hover:text-[#275f31] font-semibold"
+        >
+          Experience
+        </Link>
+      </div>
+      <div className="sm:block hidden">
+        <div className="border-r-[3px] border-[#39B54A] h-[150px] flex justify-end items-baseline relative right-[100px]">
+          <div
+            className="flex flex-row items-center gap-3 pr-[20px]"
+            onClick={() => {
+              scrollRef.current.scrollIntoView({ behavior: "smooth" });
+            }}
+          >
+            <BsChevronDown className="text-white text-[15px]" />
+            <span className="text-white text-[12px]">SCROLL DOWN</span>
+          </div>
+        </div>
+      </div>
+      <MainSkills scrollRef={scrollRef} />
+      <Footer />
     </>
   );
 };
