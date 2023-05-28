@@ -10,6 +10,16 @@
   font-family: "Poppins", sans-serif;
 }
 
+::-webkit-scrollbar {
+  width: 7px !important;
+}
+::-webkit-scrollbar-track {
+  background-color: #1d1e1e !important;
+}
+::-webkit-scrollbar-thumb {
+  background: #275f31 !important;
+}
+
 body {
   background-image: url("./assets/banner.jpg");
   background-size: cover;
@@ -63,8 +73,12 @@ body {
   box-shadow: none !important;
 }
 
-.contact-card{
+.contact-card {
   box-shadow: 0px 0px 14px 9px rgba(57, 181, 74, 0.75) !important;
   -webkit-box-shadow: 0px 0px 14px 9px rgba(57, 181, 74, 0.75) !important;
-  -moz-box-shadow: 0px 0px 14px 9px rgba(57, 181, 74, 0.75) !important; 
+  -moz-box-shadow: 0px 0px 14px 9px rgba(57, 181, 74, 0.75) !important;
+}
+
+.p-sidebar-content::-webkit-scrollbar {
+  display: none !important;
 }

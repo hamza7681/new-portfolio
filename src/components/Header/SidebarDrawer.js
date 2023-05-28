@@ -37,7 +37,7 @@ const SidebarDrawer = ({ show, setShow }) => {
         style={{ backgroundColor: "black" }}
         showCloseIcon={false}
       >
-        <div>
+        <div className="sidebar-div">
           <div
             className="absolute top-[10px] right-[10px] cursor-pointer"
             onClick={() => setShow(false)}

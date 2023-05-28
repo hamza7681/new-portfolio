@@ -17,7 +17,7 @@ import video1 from "../../assets/Client/Student/Vedio.mp4";
 import video2 from "../../assets/Client/Tutor/Vedio.mp4";
 import video3 from "../../assets/Admin-Panel/Vedio.mp4";
 
-const Project1 = () => {
+const Project1 = ({ scrollRef1 }) => {
   const [open, setOpen] = React.useState(false);
   const [image, setImage] = React.useState(null);
 
@@ -27,7 +27,7 @@ const Project1 = () => {
   };
 
   return (
-    <div className="h-auto sm:px-[50px] px-[20px]">
+    <div className="h-auto sm:px-[50px] px-[20px]" ref={scrollRef1}>
       <GlobalModal open={open} setOpen={setOpen} image={image} />
       <Accordion activeIndex={0}>
         <AccordionTab header="Infinity Institute" contentClassName="tab-panel">

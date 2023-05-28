@@ -4,8 +4,9 @@ import "primereact/resources/primereact.css"; // core css
 import Header from "./components/Header";
 import { Route, Routes } from "react-router-dom";
 import Home from "./components/Home";
-import Contact from "./components/Contact/Contact"
+import Contact from "./components/Contact/Contact";
 import Portfolio from "./components/Projects";
+import Experience from "./components/Experience";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/portfolio" element={<Portfolio />} />
+        <Route path="/experience" element={<Experience />} />
       </Routes>
     </>
   );

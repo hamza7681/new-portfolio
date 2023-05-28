@@ -12,7 +12,7 @@ import { Accordion, AccordionTab } from "primereact/accordion";
 import video3 from "../../assets/react-native/video.mp4";
 import MobileModal from "../../reuseAbles/MobileModal";
 
-const Project2 = () => {
+const Project2 = ({ scrollRef2 }) => {
   const [open, setOpen] = React.useState(false);
   const [image, setImage] = React.useState(null);
 
@@ -22,7 +22,7 @@ const Project2 = () => {
   };
 
   return (
-    <div className="h-auto sm:px-[50px] px-[20px]">
+    <div className="h-auto sm:px-[50px] px-[20px]" ref={scrollRef2}>
       <MobileModal open={open} setOpen={setOpen} image={image} />
       <Accordion activeIndex={0}>
         <AccordionTab
